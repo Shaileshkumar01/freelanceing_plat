@@ -23,3 +23,11 @@ app.get('/', (req, res) => {
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+const jobRoutes = require('./routes/jobs');
+const userRoutes = require('./routes/users');
+const applicationRoutes = require('./routes/applications');
+
+app.use('/api', jobRoutes);
+app.use('/api', userRoutes);
+app.use('/api', applicationRoutes);
+
